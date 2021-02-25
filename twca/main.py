@@ -1,10 +1,10 @@
-import nmap3 #from nmap3 import *
+import nmap
 import pprint as pp
 import requests
 
-testrange = '127.0.0.1'
+nm = nmap.PortScanner()
 
-nm = nmap3.Nmap()
 
-if __name__ == "__main__":
-    pp.pprint(nm.scan_top_ports(testrange))
+if __name__ == '__main__':
+    output = nm.scan('127.0.0.1', '22-443')
+    pp.pprint(output)
