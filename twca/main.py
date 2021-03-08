@@ -1,9 +1,11 @@
-import nmap
-import pprint as pp
-import requests
+try:
+    import nmap
+    import pprint as pp
+    import requests
+except ModuleNotFoundError as e:
+    print(e)
 
 nm = nmap.PortScanner()
-
 
 class Scanner:
     def __init__(self, sS=False, sV=False, sT=False, sU=False, sX=False, target='127.0.0.1', ports='22-443'):
@@ -38,17 +40,3 @@ class Scanner:
 if __name__ == '__main__':
     lubina = Scanner(sS=True, sV=True)
     print(lubina.scan())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
